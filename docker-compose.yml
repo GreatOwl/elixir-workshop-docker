@@ -16,14 +16,6 @@ services:
             HEX_UNSAFE_HTTPS: 1
             NODE_TLS_REJECT_UNAUTHORIZED: 0
 
-#    elixir-node:
-#        image: node:latest
-#        container_name: elixir-node
-#        restart: always
-#        stdin_open: true
-#        volumes_from:
-#            - elixir-data
-
     elixir-postgres:
         image: postgres
         container_name: elixir-postgres
@@ -33,15 +25,6 @@ services:
             POSTGRES_USER: 'postgres'
             POSTGRES_PASSWORD: 'postgres'
             POSTGRES_DB: 'workshop_dev'
-
-#    elixir-redis:
-#        image: tutum/redis
-#        container_name: elixir-redis
-#        ports:
-#            - "6379:6379"
-#        environment:
-#            REDIS_PASS: '**None**'
-#            REDIS_APPENDFSYNC: 'always'
 
     elixir-data:
         image: busybox
