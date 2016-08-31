@@ -19,6 +19,10 @@ defmodule Workshop.Router do
 
     get "/", PageController, :index
 
+    get "/login", SessionController, :new
+    post "/login", SessionController, :create
+    get "/logout", SessionController, :delete #js errors prevent usage of delete method This is why these view deciscions should not be left up to backenders or framework designers!!!!
+
     get "/register", RegistrationController, :new
     post "/register", RegistrationController, :create
 

@@ -1,9 +1,15 @@
 <div class="jumbotron">
   <%= if @current_user do %>
     <h2><%= gettext "Welcome to %{name}", name: @current_user.name %></h2>
-    <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+    <%= link "Logout", to: session_path(@conn, :delete),
+                      method: :delete,
+                      class: "btn btn-danger" %>
   <%= else %>
     <h2><%= gettext "Welcome to %{name}", name: "Guest!!" %></h2>
-    <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+    <%= link "Register", to: registration_path(@conn, :new),
+                        class: "btn btn-danger" %>
+    or
+    <%= link "Login", to: session_path(@conn, :create),
+                      class: "btn btn-danger" %>
   <%= end %>
 </div>
