@@ -1,0 +1,60 @@
+application - multiples can run within a runtime for our phoenix Web-Application
+
+Bogdens erlang abstract machine -> Erlang runtime
+
+Actor model concurrency
+
+Need to think about how to architect your system to figure out how to recover from failure.
+
+OTP - open telecom platform
+
+BEAM - many languages implemented on
+    - earlog - prolog
+    - lua implementation
+    - lisp flavored erlang
+    - elixir of course
+
+all the code written is compiled down into bytecode in BEAM
+
+
+Processes are lightweight concurrency
+    - state must be maintained by recursion
+    - Communicate through message passing
+
+Within a process garbage collection occurs on a per process basis
+
+Crashes are isolated
+Concurrency is available out of the box
+Load is balanced on IO and CPU (efficient on multicore systems)
+
+OTP is a framework for building fault tolerant systems
+    - GenServers
+    - Supervisors
+    - Processes
+
+mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+mix help | grep phoenix
+mix phoenix.new hello
+
+{[:key, "value"]} becomes [key: "value"]
+[key: "value"] stays as it is
+["key": "value"] becomes [key: "value"]
+["key.value": "value"] stays as it is
+
+dializer
+
+plug.conn.t <- .t tells us this is a type
+
+pipe operator
+    - |>
+        - says the thing that comes first, it's result is the first argument to the function being piped
+    - Used for major control flow operations in Elixir
+
+3 plugs in phoenix
+    - endpoint
+    - router
+    - controller
+
+Cowboy does support https! yay
+
+dunder means __

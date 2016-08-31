@@ -1,2 +1,7 @@
 .idea
 taking-off-with-phoenix
+.idea/
+
+taking-off-with-phoenix/deps
+taking-off-with-phoenix/node_modules
+taking-off-with-phoenix/_build
