@@ -1,0 +1,64 @@
+version: '2'
+services:
+
+    elixir-workshop:
+        image: elixir-workshop
+        container_name: elixir-workshop
+        restart: always
+        stdin_open: true
+        ports:
+            - "4000:4000"
+        build:
+            context: ./DockerFiles/elixir
+        volumes_from:
+            - elixir-data
+        environment:
+            HEX_UNSAFE_HTTPS: 1
+            NODE_TLS_REJECT_UNAUTHORIZED: 0
+
+#    elixir-node:
+#        image: node:latest
+#        container_name: elixir-node
+#        restart: always
+#        stdin_open: true
+#        volumes_from:
+#            - elixir-data
+
+    elixir-postgres:
+        image: postgres
+        container_name: elixir-postgres
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_USER: 'postgres'
+            POSTGRES_PASSWORD: 'postgres'
+            POSTGRES_DB: 'workshop_dev'
+
+#    elixir-redis:
+#        image: tutum/redis
+#        container_name: elixir-redis
+#        ports:
+#            - "6379:6379"
+#        environment:
+#            REDIS_PASS: '**None**'
+#            REDIS_APPENDFSYNC: 'always'
+
+    elixir-data:
+        image: busybox
+        container_name: elixir-data
+        volumes:
+            - .:/var/www/elixir
+        stdin_open: true
+
+
+    elixir-dockerui:
+        container_name: elixir-dockerui
+        image: abh1nav/dockerui:latest
+        ports:
+            - "9876:9000"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        environment:
+            SERVICE_NAME: dockerui
+            VIRTUAL_HOST: dockerui.dock
+            VIRTUAL_PORT: 9000
