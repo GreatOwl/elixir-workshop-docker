@@ -31,6 +31,7 @@ services:
         container_name: elixir-data
         volumes:
             - .:/var/www/elixir
+            - /Users/anowak/web/elixir:/var/www/elixir/firstapp
         stdin_open: true
 
 
