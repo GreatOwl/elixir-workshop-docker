@@ -1,0 +1,56 @@
+4 things that are missing in functional languages and elixir but in oo languages.
+    - tips for adjusting
+
+functional programming
+    - functional vs imerative
+        - mathematical and descriptive
+        - easier to understand and maintain
+        - a blue print rather than a recipe
+            - no side effects
+            - easier to see what your code is going to do
+        - came out of lambda calculus
+            - invented in 30's
+                - imperative paridigm
+                - developed to understand computation better
+
+- Ghost 1 objects
+    - obviously
+    - no inherent state is carried
+    - initialize the state, and return the state after every action so that the next action can pick it up and use it
+        - next action will return a new state
+    - Functional purity
+        - just deal with it
+        - next sections should help we hope
+        - but functions should simply take input and return output
+
+- Ghost 2 conditionals # why use of case statements when conditional function calls are available
+    - there is no elseif
+        - "cond" is the closest thing, and not used very much in elixir
+        - why no elseif?
+            - making code easier to read
+            - Solution for conditionals
+                -pattern matching
+                    > foo = 1
+                    > ^foo = 1 # ^ enforces pattern matching
+                    > ^foo = 3 # returns error
+                    > [h | t] = [1, 2, 3]
+                    > h # returns 1
+                    > t # returns [2, 3]
+        - inversion of control
+            - theme of functional programming #
+
+- Ghost 3 Mutability
+    - does not exist in functional programming
+    - data is a historical record, but not something we can change.
+    - variables are mutable in elixir... they can be re-bound
+        - in Elixir unlike Erlang doesn't want pattern matching by default the next time "=" is used
+    - benefits
+        - performance
+        - distribution
+    - Surprise
+        - Elixir is not purely functional
+        - Other languages allow imperative mindsets
+    - immutability
+        - loops
+            - you won't need them in functional programming anyway
+            - higher order functions and recursion
