@@ -1,0 +1,22 @@
+pg2 can allow us to access groups of processes by a common name.
+
+pg2 is using tools from OTP to distribute messages in a cluster.
+
+serialize writes through a single server to prevent race conditions.
+
+global: provides a lock across the cluster so that no other process in the cluster can perform certain actions
+    until the lock has been released.
+
+node and process monitoring
+    when pg2 is notified of a new member it merges groups and memberships.
+
+
+there could be lock overhead if our groups contain large number of memberships
+    - pg2 may not be your solution for these situations
+
+pg2 is a distributed database
+    - Available and partition tolerant
+    - eventually consistent and will heal from partitions
+    - conflicts are easilly resolved through merging
+
+RePG2 for examples and how to build a distributed test suite
