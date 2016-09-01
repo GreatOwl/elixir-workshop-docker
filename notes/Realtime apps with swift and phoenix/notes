@@ -1,0 +1,64 @@
+what is swift? ios oo language?
+
+
+
+why phoenix for mobile backend?
+    - fast
+    - fault tolerant
+    - concurrent
+        - allows apps to be faster because multiple things can happen at once
+    - scalable
+        - technological
+            - don't die
+        - human
+            - allows the ability to scale
+                - company
+                - team
+                    - excitement
+                    - community
+                    - established patterns and libraries
+    - maintainable
+        - technological
+            - language
+            - stack
+            - scalability
+            - hot code reloading
+        - human
+            - passion
+            - expressiveness of code
+            - innovative patterns
+
+    - web-sockets
+        - with phoenix out of the box
+            - called channels
+                - warnings
+                    - missed messages, messages received are not persisted
+                        -disconnected when going through the tunnel
+                    - buffering
+                        - ensuring messages received even if went through the tunnel
+                    - reconnect
+                        - seamless reconnection when exiting the tunnel
+            - no additional dependencies (blah)
+                - bloated feature set in the framework in my opinion
+        - a protocol allowing full duplex communication over tcp
+            - allowing communication in both connections
+                - send messages as long as we have an established connection
+        - available on all user platforms
+            - web, all major browsers
+            - ios: Starscream
+                - swift
+                    - websocket clients for swift
+                        - birdsong
+                        - phoenix websocket
+                        - swift phoenix client
+                    - introduced in 2014 by apple
+                    - open sourced in 2015
+                    - not functional
+                        - but has a surprisingly large functional community
+                        - functional swift book
+                        - in swift "let" establishes immutable
+                            - optional type means can be nil
+                    - swift playgrounds
+            - android
+
+
