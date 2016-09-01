@@ -1,0 +1,57 @@
+IO.puts/2 vs IO.inspect/2
+    one for output, one for inspecting the vaulues inside
+    IO.inspect is pipable-> which means you can use it before and after everything you pipe together
+
+        |> action.first
+        |> IO.inspect
+        |> action.second
+
+Tools for debugging
+    - IEx.pry
+        - inspects a running process
+        - only has access to the lexical scope
+        - no access to variablse before it existed
+        - can be used with tests
+        - it blocks the process, don't use in production
+        - not a traditional debugger
+
+:debugger
+    - :debugger.start()
+    - then run a graphical tool
+    - blocks the process, do not use in production
+    - values cannot be changed at run time like in oo
+
+production tools
+
+    :observer
+        :observer.start
+            - common errors
+                - cpu bottle-neck
+                    - cpu is hard to profile
+                    - high reduction count usually means an high cpu usage
+                - memory leak
+                    - 3 mistakes to avoid
+                        - ETS tables are never garbage collected
+                            - only manually remove
+                        - don't use dynamic atoms
+                        - message queues that don't get emptied
+                - identifying errors
+                    - crashdump
+                    - tracing
+                        - :et
+                        - :dbg
+            - erlyberly
+                - connect to  a remote node
+                    - not hard but there can be problems
+                - requires :runtime_tools
+                - server without graphical interface
+                - Name your remote node
+
+    SASL system architectiure support libraries
+        - information about observers and supervisors
+
+- Next steps
+    - dialyzer
+    book
+        - stuff goes bad, erlang in anger
+
