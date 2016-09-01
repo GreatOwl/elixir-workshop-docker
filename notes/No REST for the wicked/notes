@@ -1,0 +1,27 @@
+absinth and graphql
+
+sounds great for getting not necessarily for inserting...
+I'm dissapointed that it gives 200 responses but a data structure for errors to connected clients.
+
+REST
+    Request
+        - GET /users/1
+        - Returns Response
+            - links/references to associated resources
+                - bad for mobile
+                - so we serialize everything (barf)
+                    - no longer an api resources
+                    - instead an api of view resources
+                    - results in client server contract
+        - Basically untyped
+
+Why graphQL
+    - relationships and hierarchy
+        - ask for specific data, and get exactly what you need back.
+    - strongly typed
+    - uses schemas and generate queries
+        - inverts control flow
+    - designed their own types/structs
+
+    Graphiql
+
