@@ -51,6 +51,11 @@ functional programming
         - Elixir is not purely functional
         - Other languages allow imperative mindsets
     - immutability
-        - loops
-            - you won't need them in functional programming anyway
-            - higher order functions and recursion
+
+- Ghost 4 loops
+    - you won't need them in functional programming anyway
+    - higher order functions and recursion
+    - reduce, map and filter allow loop like functionality, but take higher order functions as arguments
+    - Tail Recursion what is it?
+        - call recursion on the last line, so the result is returned, everything is returned up the chain.
+
