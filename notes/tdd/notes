@@ -1,0 +1,27 @@
+tools
+    - exunit
+    - and hound
+
+organize your files
+    - recommend match directory structure
+    - break long test files into multiple files
+        - break module tests for large files into pieces by placing a directory for the module
+            - different files now have multiple files to test different functions in the module
+
+    - if too much test data - library like ex_machina
+        - generate factories to produce test data
+            - should work with or with ecto
+        - factories can act as documentation for models
+            - yes factories for tests!
+        - helpers are useful for setting up complex scenarios
+            - can also be local
+    - write acceptance tests
+        - can tell you users story
+        - provides you a suite of documented tests that tell you how users are expected to interact with your app
+
+    exunit allows creation of custom assertions
+
+    - TDD doesn't always make sense for experimental stuff
+
+
+
