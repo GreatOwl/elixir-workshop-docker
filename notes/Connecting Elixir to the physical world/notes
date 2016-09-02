@@ -1,0 +1,8 @@
+Nerves
+    - Key attributes
+        - Build tooling and basic infrastructure for running Elixir on embedded Linux
+        - Start small and build up vs trim down
+        - cross compiled
+        - Elixir and Erlang/OTP libraries and applications over embedded linux ones when they exist
+    - really cool stuff, but I don't have the background to summarize.
+        - basically talks about reading spec sheets for hardware and building your own drivers in elixir.
