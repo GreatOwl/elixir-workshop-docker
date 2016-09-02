@@ -1,0 +1,60 @@
+oop library for elixir?
+
+inspiration
+    Robert C. Martin
+
+    - Organize a project so its easy to delet code
+
+What is an Umbrella Project?
+    - mixfile
+    - apps/ directory
+    - OTP applications
+        - a component that can be started and stopped and re-used by other apps
+        - app dependencies
+        - configuration
+        - start stop behavier
+        - regular applications and & library apps
+        - standard
+        ~ Application
+            - Server/Service (correlation in OO)
+                - or a Microservice ~ umbrella?
+
+
+Building an umbrella
+    - mix a new project
+        - just a normal project
+    - create a new mib project in "apps/"
+        - mix will know automatically its an umbrella
+        - This will contain business logic
+
+        Ex. Entities in a Bank
+            - Account ~ ledger entity
+            - Entry ~ ledger entity
+            - Customer
+            ~ These all have different rates of change
+
+            bank.ledgen.balance
+            bank.ledger.write
+            bank.create_customer
+
+                -These are interactions/modules
+    - umbrella apps need to be identified as in_umbrella: in mix file
+    - add bank as dependency to a new web project
+        - separation of concerns
+
+    - new umbrella for admin app
+        - setup different ports in development
+            - phoenix is not your application
+
+    - Deployment
+        - Heroku
+            - MasterProxy
+        - distillery - first class support for umbrella projects
+
+    - Auth
+        - separate subsystem
+            - upfront design
+            - separate features
+            - Separate Repo and separate DB
+
+    actual app so you can see operation: https://github.com/wojtekmach/acme_bank
